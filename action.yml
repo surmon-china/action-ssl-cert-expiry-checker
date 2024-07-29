@@ -2,7 +2,7 @@ name: "SSL certificate watcher"
 description: "Watch SSL certs expiring for your domains"
 branding:
   icon: "alert-triangle"
-  color: "gray-dark"
+  color: "orange"
 
 inputs:
   domain:
