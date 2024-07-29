@@ -53,6 +53,7 @@ jobs:
         domain:
           - github.com
           - surmon.me
+
     steps:
       - name: Check domain SSL and registry expire date
         id: check-ssl
@@ -68,3 +69,7 @@ jobs:
           title: 🧨 ${{ matrix.domain }} — SSL cert expires in ${{ steps.check-ssl.outputs.ssl-expire-days-left }} days
           body: "Valid till: `${{ steps.check-ssl.outputs.ssl-expire-date }}`"
 ```
+
+## License
+
+Licensed under the [MIT](/LICENSE) License.
