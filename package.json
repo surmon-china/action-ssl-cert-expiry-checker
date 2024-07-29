@@ -1,0 +1,23 @@
+{
+  "name": "action-check-ssl-certificate",
+  "description": "Watch SSL certs expiring for your domains",
+  "keywords": [
+    "ssl-certificate",
+    "check-ssl-cert"
+  ],
+  "author": "Surmon",
+  "license": "MIT",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "homepage": "https://github.com/surmon-china/action-check-ssl-certificate#readme",
+  "scripts": {
+    "build": "ncc build index.js -o dist --external https"
+  },
+  "dependencies": {
+    "@actions/core": "^1.10.1"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.1"
+  }
+}
