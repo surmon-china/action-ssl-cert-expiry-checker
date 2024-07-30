@@ -66,7 +66,7 @@ jobs:
         uses: rishabhgupta/git-action-issue@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          title: 🧨 ${{ matrix.domain }} — SSL cert expires in ${{ steps.check-ssl.outputs.ssl-expire-days-left }} days
+          title: ${{ matrix.domain }} — SSL cert expires in ${{ steps.check-ssl.outputs.ssl-expire-days-left }} days
           body: "Valid till: `${{ steps.check-ssl.outputs.ssl-expire-date }}`"
 ```
 
