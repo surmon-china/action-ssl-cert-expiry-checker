@@ -67,7 +67,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           title: ${{ matrix.domain }} — SSL cert expires in ${{ steps.check-ssl-expiry.outputs.ssl-expire-days-left }} days
-          body: "Valid till: `${{ steps.check-ssl-expiry.outputs.ssl-expire-date }}`"
+          body: ${{ steps.check-ssl-expiry.outputs.ssl-expire-date }}
 ```
 
 ## License
