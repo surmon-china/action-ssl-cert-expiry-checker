@@ -23,9 +23,9 @@ The number of days left until the SSL certificate expires.
 ```yaml
 - name: Check domain SSL expire date
   id: check-ssl
-  uses: surmon-china/action-ssl-cert-expiry-checker@v1
+  uses: surmon-china/action-ssl-cert-expiry-checker@v1.0.0
   with:
-    domain: ${{ matrix.domain }}
+    domain: surmon.me
 
 - run: echo 'SSL cert has ${{ steps.check-ssl.outputs.ssl-expire-days-left }} days left'
   if: ${{ steps.check-ssl.outputs.ssl-expire-days-left }}
@@ -57,7 +57,7 @@ jobs:
     steps:
       - name: Check domain SSL certificates expire time
         id: check-ssl-expiry
-        uses: surmon-china/action-ssl-cert-expiry-checker@v1
+        uses: surmon-china/action-ssl-cert-expiry-checker@v1.0.0
         with:
           domain: ${{ matrix.domain }}
 
