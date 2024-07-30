@@ -22,12 +22,12 @@ The number of days left until the SSL certificate expires.
 
 ```yaml
 - name: Check domain SSL expire date
-  id: check-ssl
+  id: check-ssl-expiry
   uses: surmon-china/action-ssl-cert-expiry-checker@v1.0.0
   with:
     domain: surmon.me
 
-- run: echo 'SSL cert has ${{ steps.check-ssl.outputs.ssl-expire-days-left }} days left'
+- run: echo 'SSL cert has ${{ steps.check-ssl-expiry.outputs.ssl-expire-days-left }} days left'
   if: ${{ steps.check-ssl.outputs.ssl-expire-days-left }}
 ```
 
