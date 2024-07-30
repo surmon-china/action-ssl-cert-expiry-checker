@@ -1,16 +1,17 @@
 {
-  "name": "action-check-ssl-certificate",
-  "description": "Watch SSL certs expiring for your domains",
+  "name": "action-ssl-cert-expiry-checker",
+  "description": "Check SSL certificate expiry time for your domains",
   "keywords": [
     "ssl-certificate",
-    "check-ssl-cert"
+    "check-ssl-cert",
+    "check-cert-expiry"
   ],
   "author": "Surmon",
   "license": "MIT",
   "version": "1.0.0",
   "type": "module",
   "main": "dist/index.js",
-  "homepage": "https://github.com/surmon-china/action-check-ssl-certificate#readme",
+  "homepage": "https://github.com/surmon-china/action-ssl-cert-expiry-checker#readme",
   "scripts": {
     "build": "ncc build index.js -o dist --external https"
   },

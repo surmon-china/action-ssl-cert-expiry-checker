@@ -26710,7 +26710,7 @@ var core = __nccwpck_require__(2186);
  * @param {string} domain
  * @returns {Promise<any>}
  */
-const getDomainCertificate = (domain) => {
+const getSSLCertificate = (domain) => {
   return new Promise((resolve, reject) => {
     const options = { hostname: domain, port: 443, method: 'GET', agent: false }
     const request = external_https_namespaceObject["default"].request(options, response => {
@@ -26724,7 +26724,7 @@ const getDomainCertificate = (domain) => {
 const main = async () => {
   try {
     const domain = core.getInput('domain', { required: true, trimWhitespace: true })
-    const certificate = await getDomainCertificate(domain)
+    const certificate = await getSSLCertificate(domain)
     if (certificate.valid_to) {
       const date = new Date(certificate.valid_to)
       const expireDate = date.toString()

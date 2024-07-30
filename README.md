@@ -1,6 +1,6 @@
-# SSL Certificate Watcher
+# SSL Certificate Expiry Checker
 
-Watch SSL certs expiring for your domains.
+Check SSL certificate expiry time for your domains.
 
 ## Inputs
 
@@ -23,7 +23,7 @@ The number of days left until the SSL certificate expires.
 ```yaml
 - name: Check domain SSL expire date
   id: check-ssl
-  uses: surmon-china/action-check-ssl-certificate@v1
+  uses: surmon-china/action-ssl-cert-expiry-checker@v1
   with:
     domain: ${{ matrix.domain }}
 
@@ -47,7 +47,7 @@ on:
 jobs:
   check-ssl:
     runs-on: ubuntu-latest
-    name: Check domain SSL certificates
+    name: Check domain SSL certificates expire time
     strategy:
       matrix:
         domain:
@@ -55,9 +55,9 @@ jobs:
           - surmon.me
 
     steps:
-      - name: Check domain SSL and registry expire date
+      - name: Check domain SSL certificates expire time
         id: check-ssl
-        uses: surmon-china/action-check-ssl-certificate@v1
+        uses: surmon-china/action-ssl-cert-expiry-checker@v1
         with:
           domain: ${{ matrix.domain }}
 

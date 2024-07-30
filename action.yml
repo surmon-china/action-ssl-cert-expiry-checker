@@ -1,5 +1,5 @@
-name: "SSL certificate watcher"
-description: "Watch SSL certs expiring for your domains"
+name: "SSL Certificate Expiry Checker"
+description: "Check SSL certificate expiry time for your domains"
 branding:
   icon: "alert-triangle"
   color: "orange"
@@ -12,7 +12,6 @@ inputs:
 outputs:
   ssl-expire-date:
     description: "SSL certificate expire date"
-
   ssl-expire-days-left:
     description: "SSL certificate expire number of days left"
 
