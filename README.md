@@ -45,7 +45,7 @@ on:
     - cron: "0 8 * * *"
 
 jobs:
-  check-ssl:
+  check-ssl-expiry:
     runs-on: ubuntu-latest
     name: Check domain SSL certificates expire time
     strategy:
@@ -56,18 +56,18 @@ jobs:
 
     steps:
       - name: Check domain SSL certificates expire time
-        id: check-ssl
+        id: check-ssl-expiry
         uses: surmon-china/action-ssl-cert-expiry-checker@v1
         with:
           domain: ${{ matrix.domain }}
 
       - name: Create an issue if SSL lifespan days number is below limit
-        if: ${{ steps.check-ssl.outputs.ssl-expire-days-left < 10 }}
+        if: ${{ steps.check-ssl-expiry.outputs.ssl-expire-days-left < 10 }}
         uses: rishabhgupta/git-action-issue@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          title: ${{ matrix.domain }} — SSL cert expires in ${{ steps.check-ssl.outputs.ssl-expire-days-left }} days
-          body: "Valid till: `${{ steps.check-ssl.outputs.ssl-expire-date }}`"
+          title: ${{ matrix.domain }} — SSL cert expires in ${{ steps.check-ssl-expiry.outputs.ssl-expire-days-left }} days
+          body: "Valid till: `${{ steps.check-ssl-expiry.outputs.ssl-expire-date }}`"
 ```
 
 ## License
